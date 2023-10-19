@@ -1,5 +1,4 @@
-import time
-import Librar.data_collector
+from time import strftime, gmtime
 
 
 def title_show(user_info_list, title_name):
@@ -8,14 +7,14 @@ def title_show(user_info_list, title_name):
     for user_name, user_time in user_info_list:
         print("║{:>90}{:<10}{:<10}║".format("", "User name: ", user_name))
         print("║{:>90}{:<10}{:<10}║".format("", "On system: ",
-                                            time.strftime("%H:%M:%S", time.gmtime(user_time))))
+                                            strftime("%H:%M:%S", gmtime(user_time))))
 
 
 def cpu_show(cpu_data):
     _times, percent = cpu_data
     load = "{:░<10}".format("▓" * int(percent / 10))
-    user_time = time.strftime("%H:%M:%S", time.gmtime(_times.user))
-    system_time = time.strftime("%H:%M:%S", time.gmtime(_times.system))
+    user_time = strftime("%H:%M:%S", gmtime(_times.user))
+    system_time = strftime("%H:%M:%S", gmtime(_times.system))
     print("║\t{:<10}{:<10}{:<10}{}{:<68}║".format("CPU", "Load:", str(percent) + " % ", load, ""))
     print("║\t{:<10}{:<10}{:<10}{:<78}║".format("CPU time", "User:", str(user_time), ""))
     print("║\t{:<10}{:<10}{:<10}{:<78}║".format("", "System:", str(system_time), ""))
