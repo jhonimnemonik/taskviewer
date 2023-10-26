@@ -12,7 +12,7 @@ def title_show(user_info_list, title_name):
 
 
 def cpu_show(cpu_data):
-    inf = cpu_data
+    inf = cpu_data[0]
     us_t = inf['user']
     sys_t = inf['system']
     perc = inf['percent']
@@ -26,7 +26,7 @@ def cpu_show(cpu_data):
 
 
 def memory_show(mem_data):
-    mem = mem_data
+    mem = mem_data[0]
     perc = mem['percent']
     tot = mem['total'] // 1024 ** 2
     free = mem['free'] // 1024 ** 2
@@ -38,7 +38,7 @@ def memory_show(mem_data):
 
 
 def boot_show(boot_info):
-    b_inf = boot_info
+    b_inf = boot_info[0]
     print("║\t{:<15}{:<5}{:<30}{:<58}║".format("Boot time:", "", b_inf['boot_time'], ""))
     print("║\t{:<15}{:<5}{:<30}{:<58}║".format("Time since On:", "", b_inf['since_time'], ""))
 

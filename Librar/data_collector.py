@@ -16,39 +16,42 @@ def user_info_get():
 
 @wr.log_to_file("CPU")
 def cpu_get():
+    cpu_dict = []
     times = psutil.cpu_times()
     percent = psutil.cpu_percent(interval=0)
-    cpu_dict = {
+    cpu_dict.append({
         'user': times.user,
         'system': times.system,
         'percent': percent
-    }
+    })
     return cpu_dict
 
 
 @wr.log_to_file("Memory")
 def memory_get():
+    mem_list = []
     mem_info = psutil.virtual_memory()
     total = mem_info.total
     percent = mem_info.percent
     free = mem_info.available
-    mem_list = {
+    mem_list.append({
         'total': total,
         'percent': percent,
         'free': free
-    }
+    })
     return mem_list
 
 
 @wr.log_to_file("Boot")
 def boot_get():
+    boot_list = []
     time_value = psutil.boot_time()
     boot_time = datetime.datetime.fromtimestamp(time_value).strftime("%Y-%m-%d %H:%M:%S")
     since_time = "{:.0f}".format(time_value / 3600) + ' H.'
-    boot_list = {
+    boot_list.append({
         'boot_time': boot_time,
         'since_time': since_time,
-    }
+    })
     return boot_list
 
 

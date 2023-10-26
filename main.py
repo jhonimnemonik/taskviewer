@@ -1,5 +1,5 @@
 from Librar import data_collector as dc
-from Ui import interface as iu
+from Ui import Interface as iu
 
 user_dat = dc.user_info_get()
 cpu_dat = dc.cpu_get()
