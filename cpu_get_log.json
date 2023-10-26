@@ -1,8 +1,0 @@
-"2023-10-17 23:45:32"
-"Get for: 'cpu_get'"
-"Info: (scputimes(user=8699.05, nice=89.72, system=2366.58, idle=16926.75, iowait=174.6, irq=0.0, softirq=213.93, steal=0.0, guest=0.0, guest_nice=0.0), 100.0)"
-
-"2023-10-18 00:20:12"
-"Get for: 'cpu_get'"
-"Info: (scputimes(user=9489.73, nice=89.74, system=2707.13, idle=19791.65, iowait=211.92, irq=0.0, softirq=249.16, steal=0.0, guest=0.0, guest_nice=0.0), 100.0)"
-
